@@ -275,6 +275,46 @@ public class DoublyLinkedList {
     }
 
     public void addNodeAfter(Node node1, Node node2) {
+
+        // Concept : 
+        
+        // ให้ node1 และ node หลัง node1 (node3 = node1.next) ชี้ไปยัง node2
+        // และ node2 ชี้กลับมายัง node เหล่านี้
+        //              ... <-> node <-> node <-> ...
+        //                      ↑           ↑
+        //                   node1         node3
+        //                           node
+        //                            ↑
+        //                          node2 
+        // นั่นคือ node1.next ชี้มา node2
+        //              ... <-> node <-  node <-> ...
+        //                      ↑  |        ↑
+        //                   node1 |       node3
+        //                         '→node
+        //                            ↑
+        //                          node2 
+        // node2.previous ชี้มา node1
+        //              ... <-> node <-  node <-> ...
+        //                      ↑ ↑|        ↑
+        //                  node1 ||       node3
+        //                        |'→node
+        //                        '--'↑
+        //                          node2 
+        // node3.previous ชี้มา node2
+        //              ... <-> node      node <-> ...
+        //                      ↑ ↑|      |  ↑
+        //                  node1 ||      |  node3
+        //                        |'→node←'
+        //                        '--'↑
+        //                          node2 
+        // node2.next ชี้มา node3
+        //              ... <-> node      node <-> ...
+        //                      ↑ ↑|      |↑ ↑
+        //                  node1 ||      || node3
+        //                        |'→node←'|
+        //                        '--'↑ '--'
+        //                          node2 
+
         Node pre = findNode(node1.student_id);
         Node nxt = pre.next;
         if (nxt == null) {
