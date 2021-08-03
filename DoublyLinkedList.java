@@ -388,7 +388,7 @@ public class DoublyLinkedList {
 
         // Concept : 
         // 1. ถ้า node1 == head ใช้คำสั่ง pushFront() ได้เลย
-        // 2. ถ้า node1 != tail ใช้วิธีการจะคล้ายกับ addNodeAfter ดังนี้
+        // 2. ถ้า node1 != head ใช้วิธีการจะคล้ายกับ addNodeAfter ดังนี้
         // ให้ node1 และ node ก่อน node1 (node3 = node1.previous) ชี้ไปยัง node2
         // และ node2 ชี้กลับมายัง node เหล่านี้
         //
